@@ -1,0 +1,5 @@
+UNK
+O
+SYMPTOM_AND_DISEASE
+medical_procedure
+drug
