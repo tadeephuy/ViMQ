@@ -9,7 +9,7 @@ from torch.utils.data import Dataset
 
 import numpy as np
 
-from utils import get_entity_label
+from utils import get_entity_label, get_new_label
 
 ALPHA = [1, -1]
 
@@ -120,6 +120,7 @@ class ViMQ(Dataset):
 
         if predictions:
             logger.info("Updating new label")
+            predictions = get_new_label(predictions, self.args.lamda)
             self.examples = self.update_label(self.examples, predictions)
         
         if iteration > args.iternoise:
